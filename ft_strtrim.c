@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibohonos <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ibohonos <ibohonos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 18:59:49 by ibohonos          #+#    #+#             */
-/*   Updated: 2017/11/07 14:58:32 by ibohonos         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:32:47 by ibohonos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ft_strtrim(char const *s)
 		j--;
 	l = j - i + 1;
 	if (l < 0)
-		return ("");
+		return (ft_strdup(""));
 	a = (char *)malloc(sizeof(char) * l + 1);
 	if (a == NULL)
 		return (NULL);

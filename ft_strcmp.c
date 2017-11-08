@@ -21,7 +21,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	p2 = (unsigned char *)s2;
 	if (*p1 == '\0')
 		return (*p1 - *p2);
-	while (*p1)
+	while (*p1 || *p2)
 	{
 		if (*p1 == *p2)
 		{

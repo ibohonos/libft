@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibohonos <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ibohonos <ibohonos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 13:38:09 by ibohonos          #+#    #+#             */
-/*   Updated: 2017/11/07 11:09:51 by ibohonos         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:06:48 by ibohonos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t i;
 
+	if (f == NULL)
+		return ;
 	if (s)
 	{
 		i = 0;
