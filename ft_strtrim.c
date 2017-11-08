@@ -23,24 +23,26 @@ char		*ft_strtrim(char const *s)
 {
 	char	*a;
 	int		i;
+	int		j;
+	int		l;
 
 	if (!s)
 		return (NULL);
-	while (ft_delim(*s) == 1)
-		s++;
-	s = ft_strrev((char *)s);
-	while (ft_delim(*s) == 1)
-		s++;
-	s = ft_strrev((char *)s);
-	a = (char *)malloc(sizeof(char) * ft_strlen((char *)s) + 1);
+	i = 0;
+	while (ft_delim(s[i]) == 1)
+		i++;
+	j = ft_strlen((char *)s) - 1;
+	while (ft_delim(s[j]) == 1)
+		j--;
+	l = j - i + 1;
+	if (l < 0)
+		return ("");
+	a = (char *)malloc(sizeof(char) * l + 1);
 	if (a == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i] != '\0')
-	{
-		a[i] = s[i];
-		i++;
-	}
-	a[i] = '\0';
+	j = 0;
+	while (j < l)
+		a[j++] = s[i++];
+	a[j] = '\0';
 	return (a);
 }

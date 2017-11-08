@@ -6,7 +6,7 @@
 /*   By: ibohonos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/31 19:53:08 by ibohonos          #+#    #+#             */
-/*   Updated: 2017/11/07 13:49:00 by ibohonos         ###   ########.fr       */
+/*   Updated: 2017/11/07 16:51:47 by ibohonos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@ char		*ft_itoa(int n)
 		minus = 1;
 		n *= -1;
 	}
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	i = ft_count_numb(n, minus);
-	a = (char *)malloc(sizeof(char) * i + 1);
-	if (a == NULL)
+	if ((a = (char *)malloc(sizeof(char) * i + 1)) == NULL)
 		return (NULL);
 	a[i--] = '\0';
 	while (n > 9)
